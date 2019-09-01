@@ -65,6 +65,15 @@ class testPassword(unittest.TestCase):
         self.assertEqual(credentials_found.username,whatsap_credential.username)
 
 
+    def test_check_credentials_exists(self):
+        '''
+        test to check if the creential exists
+        '''
+        self.new_credentials.save_credentials()
+        whatsap_credential = Credentials("Irene","Mercy","irenemercy700@gmail.com","joozao700","IreneMercy")
+        whatsap_credential.save_credentials()
+        credential_exits = Credentials.find_by_username("IreneMercy")
+        self.assertTrue(credential_exits)
 
 
 
