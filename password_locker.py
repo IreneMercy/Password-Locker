@@ -1,15 +1,43 @@
+import getpass
+import string, random
+class User:
+    '''
+    A class that promts user to signup and login to generate passwords
+    '''
+    print("Welcome, create an account to login")
+    print("Enter Username")
+    username = input()
+    print("Enter Email")
+    email = input()
+    print("Enter Password")
+    password = getpass.getpass()
+    print("Confirm  password to login")
+
+    Confirmpassword = getpass.getpass()
+
+    if password == Confirmpassword:
+        print("Welcome to Password generator")
+    False
+
+    # def passwordGenarator(length):
+    #     print("Your generated  password is:")
+    #     password = ''
+    #     for i in range(length):
+    #         n = random.randint(0,20)
+    #         password += string.printable[n]
+    #     return password
+    # print (passwordGenarator(5))
+
+
 class Credentials:
     '''
     Class that generates ne password credentials
     '''
     credential_list = []
-    def __init__(self, first_name, last_name, email, password, username):
+    def __init__(self, password, username):
         '''
         __init__ metho that generate properties for our objects
         '''
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
         self.password = password
         self.username = username
 
