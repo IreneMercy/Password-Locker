@@ -15,7 +15,7 @@ class Credentials:
 
     def save_credentials(self):
         '''
-        save creentials into the credential_list
+        enables user to save creentials into the credential_list
         '''
         Credentials.credential_list.append(self)
 

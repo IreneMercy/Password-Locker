@@ -14,7 +14,7 @@ class testPassword(unittest.TestCase):
         self.new_credentials= Credentials("Irene","Mercy","irenemercy700@gmail.com","@joozao","joozao")
     def test_init(self):
         '''
-        Test if the object is initialized correctly
+        tests if the object is initialized correctly
         '''
         self.assertEqual(self.new_credentials.first_name,"Irene")
         self.assertEqual(self.new_credentials.last_name,"Mercy")
@@ -53,6 +53,17 @@ class testPassword(unittest.TestCase):
         whatsap_credential.save_credentials()
         self.new_credentials.delete_credential()
         self.assertEqual(len(Credentials.credential_list),1)
+
+    def test_find_credential_by_username(self):
+        '''
+        test if the credential is available and can be found by searching username
+        '''
+        self.new_credentials.save_credentials()
+        whatsap_credential = Credentials("Irene","Mercy","irenemercy700@gmail.com","joozao700","IreneMercy")
+        whatsap_credential.save_credentials()
+        credentials_found = Credentials.find_by_username("IreneMercy")
+        self.assertEqual(credentials_found.username,whatsap_credential.username)
+
 
 
 
