@@ -18,3 +18,9 @@ class Credentials:
         save creentials into the credential_list
         '''
         Credentials.credential_list.append(self)
+
+    def delete_credential(self):
+        '''
+        enable user to delete credential
+        '''
+        Credentials.credential_list.remove(self)
