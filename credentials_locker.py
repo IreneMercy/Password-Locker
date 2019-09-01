@@ -6,7 +6,6 @@ class Credentials:
     Class that generates ne password credentials
     '''
     credential_list = []
-    other_credentials = []
     def __init__(self, password, username):
         '''
         __init__ metho that generate properties for our objects
