@@ -1,39 +1,12 @@
 import getpass
-import string, random
-class User:
-    '''
-    A class that promts user to signup and login to generate passwords
-    '''
-    print("Welcome, create an account to login")
-    print("Enter Username")
-    username = input()
-    print("Enter Email")
-    email = input()
-    print("Enter Password")
-    password = getpass.getpass()
-    print("Confirm  password to login")
-
-    Confirmpassword = getpass.getpass()
-
-    if password == Confirmpassword:
-        print("Welcome to Password generator")
-    False
-
-    # def passwordGenarator(length):
-    #     print("Your generated  password is:")
-    #     password = ''
-    #     for i in range(length):
-    #         n = random.randint(0,20)
-    #         password += string.printable[n]
-    #     return password
-    # print (passwordGenarator(5))
-
-
+import random, string
+from user import User
 class Credentials:
     '''
     Class that generates ne password credentials
     '''
     credential_list = []
+    other_credentials = []
     def __init__(self, password, username):
         '''
         __init__ metho that generate properties for our objects
@@ -47,6 +20,7 @@ class Credentials:
         enables user to save creentials into the credential_list
         '''
         Credentials.credential_list.append(self)
+
 
     def delete_credential(self):
         '''
@@ -67,16 +41,37 @@ class Credentials:
             '''
             if credential.username == username:
                 return credential
-        for credentials in cls.credential_list:
+        for user in User.user_list:
             '''
             a for loop to loop through the list and check if the credential exists
             '''
-            if credentials.username == username:
-                return True
-        return False
+            if user.username == username:
+                present_user = user.username
+                return present_user
+        return "User does not exist"
+
     @classmethod
     def display_credentials(cls):
         '''
         method that displays all the credentials in the credential_list
         '''
         return cls.credential_list
+
+    def passwordGenarator(length):
+        print("Welcome, You can add and create new credentials")
+        print("Enter Username")
+        username = input()
+        password = ''
+        for i in range(length):
+            n = random.randint(0,20)
+            password += string.printable[n]
+        print("Your generated password is:")
+        print(password)
+        print("Enter your own Password? or generated one?")
+        password = getpass.getpass()
+        print("Confirm  password to save your credentials")
+        Confirmpassword = getpass.getpass()
+        if password == Confirmpassword:
+            print("Thanks for using Password Locker")
+        False
+    (passwordGenarator(5))
