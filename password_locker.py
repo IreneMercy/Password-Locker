@@ -34,9 +34,15 @@ class Credentials:
         enable user to search for a specific credential
         '''
         for credential in cls.credential_list:
+            '''
+            add a for loop to loop through the list and return the credential that matches the username
+            '''
             if credential.username == username:
                 return credential
         for credentials in cls.credential_list:
+            '''
+            add a for loop to loop through the list and check if the credential exists
+            '''
             if credentials.username == username:
                 return True
         return False
