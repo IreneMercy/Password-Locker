@@ -35,14 +35,20 @@ class Credentials:
         '''
         for credential in cls.credential_list:
             '''
-            add a for loop to loop through the list and return the credential that matches the username
+            a for loop to loop through the list and return the credential that matches the username
             '''
             if credential.username == username:
                 return credential
         for credentials in cls.credential_list:
             '''
-            add a for loop to loop through the list and check if the credential exists
+            a for loop to loop through the list and check if the credential exists
             '''
             if credentials.username == username:
                 return True
         return False
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that displays all the credentials in the credential_list
+        '''
+        return cls.credential_list
