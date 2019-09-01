@@ -44,6 +44,17 @@ class testPassword(unittest.TestCase):
         whatsap_credential.save_credentials()
         self.assertEqual(len(Credentials.credential_list),2)
 
+    def test_delete_credential(self):
+        '''
+        test if we can delete a credential
+        '''
+        self.new_credentials.save_credentials()
+        whatsap_credential = Credentials("Irene","Mercy","irenemercy700@gmail.com","joozao700","IreneMercy")
+        whatsap_credential.save_credentials()
+        self.new_credentials.delete_credential()
+        self.assertEqual(len(Credentials.credential_list),1)
+
+
 
 
 
