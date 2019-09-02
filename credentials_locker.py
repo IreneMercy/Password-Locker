@@ -49,7 +49,7 @@ class Credentials:
         Credentials.credential_list.remove(self)
 
     @classmethod
-    def find_by_username(cls,app_name):
+    def find_by_username(cls,username):
         '''
         method that takes a username and return credential that matches it
         enable user to search for a specific credential
@@ -58,8 +58,16 @@ class Credentials:
             '''
             a for loop to loop through the list and return the credential that matches the username
             '''
-            if credential.app_name == app_name:
+            if credential.username == username:
                 return credential
+        for user in User.user_list:
+            '''
+            a for loop to loop through the list and check if the credential exists
+            '''
+            if user.username == username:
+                present_user = user.username
+                return present_user
+        return "User does not exist"
 
     @classmethod
     def display_credentials(cls):
@@ -77,4 +85,4 @@ class Credentials:
             n = random.randint(0,20)
             password += string.printable[n]
 
-    passwordGenarator(5)
+    (passwordGenarator(5))
