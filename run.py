@@ -1,76 +1,82 @@
 #!/usr/bin/env python3.7
 from credentials_locker import Credentials
 import getpass
-import random, string
-from user import User
-
-
-def create_credential(username, password):
+def create_credential(app_name,username, password):
     '''
-    Function to create a new contact
+    function to create a new credential
     '''
-    new_credential = Credentials(username, password)
+    new_credential = Credentials(app_name,username,password)
     return new_credential
 
-def save_credentials(self):
+def create_user(username,email,password):
     '''
-    method that saves a credential
-    enables user to save creentials into the credential_list
+    function to create a new user
     '''
-    Credentials.credential_list.append(self)
-def delete_credential(self):
-    '''
-    method that deletes a credential
-    enable user to delete credential
-    '''
-    Credentials.credential_list.remove(self)
+    new_user = User(username,email,password)
+    return new_user
 
-@classmethod
-def find_by_username(cls,username):
+def save_credentials(Credentials):
     '''
-    method that takes a username and return credential that matches it
-    enable user to search for a specific credential
+    function to save credentials
     '''
-    for credential in cls.credential_list:
-        '''
-        a for loop to loop through the list and return the credential that matches the username
-        '''
-        if credential.username == username:
-            return credential
-    for user in User.user_list:
-        '''
-        a for loop to loop through the list and check if the credential exists
-        '''
-        if user.username == username:
-            present_user = user.username
-            return present_user
-    return "User does not exist"
+    Credentials.save_credentials()
 
-@classmethod
-def display_credentials(cls):
+def save_credentials(User):
     '''
-    method that displays all the credentials in the credential_list
+    function to save user
     '''
-    return cls.credential_list
+    User.save_user()
 
-def passwordGenarator(length):
-    print("Welcome, You can add and create new credentials")
+def delete_credential(Credentials):
+    '''
+    a function to delete credential
+    '''
+    Credentials.delete_credential()
+def check_existing_credentials(app_name):
+    '''
+    functions that checks if a credential exist using app_name
+    '''
+    return Credentials.find_by_username()
+def display_credentials():
+    '''
+    function that displays all the credentials
+    '''
+    return CredentialS.display_credentials()
+def generate_password():
+    '''
+    function that generates passwords
+    '''
+    return Credentials.passwordGenarator()
+
+def main():
+    print("Hello, Welcome to Password Locker")
+    print("Enter your user details to login:")
+    print("\n")
     print("Enter Username")
     username = input()
-    password = ''
-    for i in range(length):
-        n = random.randint(0,20)
-        password += string.printable[n]
-    print("Your generated password is:")
-    print(password)
-    print("Enter your own Password? or generated one?")
+    print("Enter email")
+    email = input()
+    print("Enter Password")
     password = getpass.getpass()
-    print("Confirm  password to save your credentials")
-    Confirmpassword = getpass.getpass()
-    if password == Confirmpassword:
-        print("Thanks for using Password Locker")
+    print("Confirm password to login")
+    confirmPassword = getpass.getpass()
+    if confirmPassword == password:
+        print("\n")
+        print("Welcome to Password Locker")
     False
-(passwordGenarator(5))
 
-if __name__ == '__run__':
-    run()
+    while True:
+        print("Use these short codes : NC - create a new credential, DC - display credential, FC -find a credential, EX() -exit the password locker ")
+        short_code = input().upper()
+        if short_code == "NC":
+            print("New credential")
+            print("Enter app_name")
+            app_name = input()
+            print("Enter username")
+            username = input()
+            print("Your generated password is:")
+            password = generate_password()
+            print(password)
+
+if __name__ == '__main__':
+    main()

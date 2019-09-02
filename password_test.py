@@ -1,6 +1,6 @@
 import unittest
 # **importing unittest module**
-from password_locker import Credentials
+from credentials_locker import Credentials
 # **importing class password **
 class testPassword(unittest.TestCase):
     '''
@@ -11,11 +11,12 @@ class testPassword(unittest.TestCase):
         Set up method to run before each test cases
         unittest.testcase helps in creating tests
         '''
-        self.new_credentials= Credentials("@joozao","joozao")
+        self.new_credentials= Credentials("whatsap","@joozao","joozao")
     def test_init(self):
         '''
         method that tests if the object is initialized correctly
         '''
+        self.assertEqual(self.new_credentials.app_name,"whatsap")
         self.assertEqual(self.new_credentials.password,"@joozao")
         self.assertEqual(self.new_credentials.username,"joozao")
 
@@ -37,7 +38,7 @@ class testPassword(unittest.TestCase):
         method that tests if we can save multiple credentials to the credentials list
         '''
         self.new_credentials.save_credentials()
-        whatsap_credential = Credentials("joozao700","IreneMercy")
+        whatsap_credential = Credentials("whatsap","joozao700","IreneMercy")
         whatsap_credential.save_credentials()
         self.assertEqual(len(Credentials.credential_list),2)
 
@@ -46,7 +47,7 @@ class testPassword(unittest.TestCase):
         method that tests if we can delete a credential
         '''
         self.new_credentials.save_credentials()
-        whatsap_credential = Credentials("joozao700","IreneMercy")
+        whatsap_credential = Credentials("whatsap","joozao700","IreneMercy")
         whatsap_credential.save_credentials()
         self.new_credentials.delete_credential()
         self.assertEqual(len(Credentials.credential_list),1)
@@ -56,7 +57,7 @@ class testPassword(unittest.TestCase):
         method that tests if the credential is available and can be found by searching username
         '''
         self.new_credentials.save_credentials()
-        whatsap_credential = Credentials("joozao700","IreneMercy")
+        whatsap_credential = Credentials("whatsap","joozao700","IreneMercy")
         whatsap_credential.save_credentials()
         credentials_found = Credentials.find_by_username("IreneMercy")
         self.assertEqual(credentials_found.username,whatsap_credential.username)
@@ -67,7 +68,7 @@ class testPassword(unittest.TestCase):
         method that tests to check if the creential exists
         '''
         self.new_credentials.save_credentials()
-        whatsap_credential = Credentials("joozao700","IreneMercy")
+        whatsap_credential = Credentials("whatsap","joozao700","IreneMercy")
         whatsap_credential.save_credentials()
         credential_exits = Credentials.find_by_username("IreneMercy")
         self.assertTrue(credential_exits)
