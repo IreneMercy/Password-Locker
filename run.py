@@ -48,11 +48,11 @@ def display_credentials():
     function that displays all the credentials
     '''
     return Credentials.display_credentials()
-def generate_password():
+def generate_password(length):
     '''
     function that generates passwords
     '''
-    return Credentials.passwordGenarator()
+    return Credentials.passwordGenarator(5)
 
 def main():
     print("Hello, Welcome to Password Locker")
@@ -72,7 +72,7 @@ def main():
     False
     save_user(create_user(username,email,password)) #Creates and saves user
     print("\n")
-    print(f"New Contact {username} {email} {password} has been created")
+    print(f"New User {username} {email} {password} has been created")
     print("\n")
 
     while True:
@@ -91,7 +91,7 @@ def main():
                     print('\n')
                 else:
                     print('\n')
-                    print("You dont seem to have any contacts saved yet")
+                    print("You dont seem to have any credentials saved yet")
                     print('\n')
 
         elif short_code == 'FC':
@@ -114,8 +114,14 @@ def main():
             print("Enter username")
             username = input()
             print("Your generated password is:")
-            password = generate_password()
-            print(password)
+            gnpass = Credentials.passwordGenarator(5)
+            print(gnpass)
+            print("Or use your choice password")
+            password = input()
+            save_credentials(create_credential(app_name,username,password)) #Creates and saves user
+            print("\n")
+            print(f"New Credential {app_name} {username} {password} has been created")
+            print("Credential saved succesfully")
 
 
 if __name__ == '__main__':
