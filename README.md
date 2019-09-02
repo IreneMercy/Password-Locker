@@ -1,15 +1,15 @@
 ## Project Name
-Password Locker
+##### Password Locker
 
 ## Project Description
-This is a  program that allow users to manage their credentials, the user can create new credentials or add existing ones .
+##### This is a  program that allow users to manage their credentials, the user can create new credentials or add existing ones .
 
 
 ## Author
-Irene Mercy
+##### Irene Mercy
 
 ## Project Setup
-Fork the repository On your terminal run the command git clone "project link" On your terminal, cd Password-Locker On your terminal then run the command code. to open the project on your text editor.
+##### Fork the repository On your terminal run the command git clone "project link" On your terminal, cd Password-Locker On your terminal then run the command code. to open the project on your text editor.
 
 ## BDD
 ##### As a user, I want to create a password locker account with my details, a login username and password.
@@ -27,10 +27,10 @@ Fork the repository On your terminal run the command git clone "project link" On
 ##### string
 
 ## License
-MIT License
+##### MIT License
 
 ## Copyright
-Irene Mercy Oyoo
+##### Irene Mercy Oyoo
 
 ## Contact
-irenemercy700@gmail.com
+##### irenemercy700@gmail.com
