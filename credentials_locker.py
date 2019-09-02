@@ -76,13 +76,10 @@ class Credentials:
         '''
         return cls.credential_list
 
-    def passwordGenarator(length):
+    def passwordGenarator():
         '''
         a method that generates passwords for the user
         '''
-        for i in range(length):
-            password = ''
-            n = random.randint(0,20)
-            password += string.printable[n]
-
-    (passwordGenarator(5))
+        # for i in range(length):
+        password = string.ascii_lowercase
+        return "".join(random.choice(password) for i in range(8))
