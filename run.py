@@ -72,5 +72,5 @@ def passwordGenarator(length):
     False
 (passwordGenarator(5))
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__run__':
+    run()
