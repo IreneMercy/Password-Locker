@@ -1,9 +1,10 @@
 ## Project Name
 Password Locker
-<!-- Project Description
-This is a website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A user can also look for repositories.
 
-This project was generated with Angular CLI version 8.2.1.
+## Project Description
+This is a  program that allow users to manage their credentials, the user can create new credentials or add existing ones .
+
+<!-- This project was generated with Angular CLI version 8.2.1.
 
 Author
 Irene Mercy
@@ -45,4 +46,4 @@ Copyright
 IreneMercyOyoo
 
 Contact
-irenemercy700@gmail.com -->
+irenemercy700@gmail.com --> -->
