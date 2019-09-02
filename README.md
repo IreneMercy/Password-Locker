@@ -4,16 +4,14 @@ Password Locker
 ## Project Description
 This is a  program that allow users to manage their credentials, the user can create new credentials or add existing ones .
 
-<!-- This project was generated with Angular CLI version 8.2.1.
 
-Author
+## Author
 Irene Mercy
 
-Project Setup
-Fork the repository On your terminal run the command git clone "project link" On your terminal, cd Github-Project On your terminal then run the command code. to open the project on your text editor.
+## Project Setup
+Fork the repository On your terminal run the command git clone "project link" On your terminal, cd Password-Locker On your terminal then run the command code. to open the project on your text editor.
 
-Live Link
-https://irenemercy.github.io/Github-Project/
+
 
 Technologies Used
 Typescript Angular Cli HTML CSS Bootstrap
